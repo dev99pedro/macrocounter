@@ -1,0 +1,42 @@
+<% if @daily_macro.present?  %>
+    <div style="display: flex">
+    <%= form_with model: @daily_macro, url: daily_macros_path,  local: true do |form| %>
+    <div>
+        <div>
+            <%= form.label :protein %>
+            <%= form.number_field :protein %>
+        </div>
+        <div>
+            <%= form.label :carbs %>
+            <%= form.number_field :carbs %> 
+        </div>
+        <div>
+            <%= form.label :fats %>
+            <%= form.number_field :fats %>
+        </div>
+        <div>
+            <%= form.label :calories %>
+            <%= form.number_field :calories %>
+        </div>
+        <%= form.submit "Salvar" %>
+    </div>
+    <% end %>
+    <p>Proteina: <%= @daily_macro_show.last&.protein || 0 %></p>
+    <p>Carbs: <%= @daily_macro_show.last&.carbs || 0 %></p>
+    <p>Fats: <%= @daily_macro_show.last&.fats || 0 %></p>
+    <p>Calories: <%= @daily_macro_show.last&.calories || 0 %></p>
+
+    </div>
+
+    <div>
+    <h2>Calorias: <%= current_user.sum_macros[:calories] %></h2>
+    <h2>Proteinas: <%= current_user.sum_macros[:proteins] %></h2>
+    <h2>Carboidratos: <%= current_user.sum_macros[:fats] %></h2>
+    <h2>Gorduras: <%= current_user.sum_macros[:carbs] %></h2>
+    </div>
+<% else %>
+    <p>  Não existe</p>
+<% end%>
+
+
+

@@ -1,0 +1,4 @@
+<h2>Adicionar comida para <%= @meal_type.capitalize %></h2>
+
+<%= render 'foodcard', meal_type: @meal_type %>
+<%= render 'foodmap', meal_type: @meal_type, foods: @food %>

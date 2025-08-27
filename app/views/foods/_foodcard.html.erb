@@ -1,0 +1,13 @@
+
+<%= form_with url: foods_path, method: :post,  local: true do |form | %>
+    <%= form.hidden_field :meal_type, value: meal_type %>
+    <%= form.label "Nome da comida" %>
+    <%= form.text_field :query %>
+    <%= form.number_field :unit%>
+    <%= form.submit "Salvar"%>
+<% end %>
+
+
+<%# url: ali vai o metodo HTTP que tu quer usar. No caso para ATIVAR O metodo post, precisamos colocar teste_path. %>
+
+<%# method: é explicativo, só botar o metodo que tu quer %>
