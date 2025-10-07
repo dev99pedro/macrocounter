@@ -1,24 +1,38 @@
-# README
+## Blog
+MacroCounter is a calorie tracking app built with Ruby on Rails. It allows users to log their daily food intake and automatically retrieves calorie and nutritional information via an external food API.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technology 
+Here are the technologies used in this project.
 
-Things you may want to cover:
+* Ruby on Rails
+* PostgreSQL
+* Hotwire (Turbo + Stimulus)
+* Rspec
+  
 
-* Ruby version
+## Services Used
 
-* System dependencies
+* Github
 
-* Configuration
+## Getting started
 
-* Database creation
+To run the project:
+rails s
 
-* Database initialization
+## How to use
+* User authentication with Devise
+* Daily calorie tracking with macro breakdowns (proteins, carbs, fats)
+* Food search and logging via integration with a third-party nutrition API
+* Responsive UI for mobile and desktop use
+* Data persistence using PostgreSQL
+* Clean and minimal interface for quick and easy food logging
 
-* How to run the test suite
+![Initial image](https://github.com/dev99pedro/macrocounter/blob/main/app/assets/stylesheets/macrocounter.png)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Links
+  - Repository: https://github.com/dev99pedro/macrocounter
+  ## Authors
 
-* ...
+  * **Pedro Ascari Azevedo** 
+  Thanks to visiting me and good coding!
