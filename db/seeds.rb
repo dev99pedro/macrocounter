@@ -8,8 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-User.create!(
-  email: 'admin@example.com',
-  password: 'senha123',
-  password_confirmation: 'senha123'
+
+
+
+Food.create!(
+foodname: "banana", calories: 89, proteins: 1, fats: 0, carbs: 23, user_id: 2, meal_type: "almoco", serving_size: "100"
 )

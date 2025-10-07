@@ -1,10 +1,589 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+*,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.header-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0077b6;
+    padding-bottom: 3px;
+}
+
+.header-user .email-user {
+    color: #fff;
+    font-size: 11px;
+    padding-right: 3px;
+}
+
+.header-user .btn-logout {
+    background: none;
+    border: none;
+    color: #fff;
+    text-decoration: underline;
+    padding-left: 3px;
+    cursor: pointer;
+}
+
+.header-user .btn-logout:hover {
+    color: #492b4f;
+}
+
+.login-page {
+    height: 100vh;
+    background: #8a26d1;
+    background: #c8d9ed;
+    display: flex;
+}
+
+.login-page .login-page-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 350px;
+    background-color: #ffffff;
+    width: 250px;
+    margin: auto;
+    padding-top: 25px;
+}
+
+.login-page .login-page-form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login-page .login-page-inputs {
+    height: 35px;
+    background-color: #d0d0d0;
+    width: 205px;
+    margin-top: 5px;
+    border: none;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.login-page .login-page-inputs:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.login-page .field.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.login-page .field.remember-me .label {
+    font-size: 11px;
+    color: #d0d0d0;
+    gap: 6px;
+}
+
+.login-page .actions .btn {
+    width: 205px;
+    height: 35px;
+    border: none;
+    text-transform: uppercase;
+    background-color: #ae28b5;
+    color: white;
+    cursor: pointer;
+}
+
+.login-page-signup {
+    text-decoration: none;
+    font-size: 12px;
+    color: #d0d0d0;
+}
+
+.login-page-forgot-your-password {
+    font-size: 10px;
+    color: #d0d0d0;
+}
+
+
+/* ///// */
+
+.text-registration-password {
+    font-size: 11px
+}
+
+.login-singup-page {
+    font-size: 10px;
+    color: #d0d0d0;
+    padding-bottom: 40px;
+    margin-top: 10px;
+}
+
+/* ////// */
+
+
+.container-home-page-macro {
+    background-color: #faf0e6;
+    padding-top: 50px;
+    height: 100vh;
+}
+
+.home-page-macro {
+    border-radius: 6px;
+    width: 410px;
+    height: 300px;
+    background: #ffffff;
+    margin: auto;
+    margin-top: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    padding-top: 20px;
+}
+
+
+
+.container-macro-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.macro-form .input-macro-form {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+    height: 30px;
+    width: 300px;
+    border-radius: 6px;
+    border: 1px solid #F4E7E1;
+}
+
+.macro-form .macro-form-fields {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.macro-form .btn-macro-form {
+    height: 30px;
+    border-radius: 6px;
+    width: 300px;
+    margin-top: 10px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #ffffff;
+    background: #2A7B9B;
+    background: #4663ac;
+}
+
+.btn-macro-form:hover {
+    background-color: #c1d8f0;
+}
+
+/* ///// */
+
+
+.daily-macros {
+    display: flex;
+    align-items: center;
+    background-color: #0077b6;
+    justify-content: space-between;
+    color: #ffffff;
+    gap: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.daily-macros div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.daily-macros .daily-macros-foods {
+    width: 20%;
+}
+
+
+/* //// */
+
+.food-page {
+    display: flex;
+    justify-content: space-between;
+}
+
+.food-page .food-page-total-macros {
+    margin-top: 5px;
+    margin-bottom: 45px;
+}
+
+.food-page .food-page-total-macros .btn-change-macros {
+    color: #ffffff;
+    background: #0077b6;
+    width: 80px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 10px;
+    border-radius: 2px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.food-page .food-page-total-macros .btn-change-macros:hover {
+    background-color: red;
+}
+
+.food-page .food-page-food-selection {
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: max-content;
+}
+
+.food-page-food-selection .food-data {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #000000;
+}
+
+.food-page-food-selection .container-btn-new-food {
+    margin-top: 150px;
+    background: #04a12b;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.food-page-food-selection .container-btn-new-food .btn-new-food {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.food-page-food-selection .container-btn-new-food:hover {
+    background-color: #218838;
+}
+
+.food-page-food-selection .food-data>div:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #DADADA
+}
+
+
+
+.food-page-food-selection .food-data>div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+}
+
+.food-page-food-selection .food-data span {
+    font-size: 13px;
+}
+
+.food-page-food-selection .food-data .serving-text {
+    font-size: 12px;
+    padding-right: 10px;
+}
+
+
+
+.food-card-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid;
+    width: 97%;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+
+
+.food-card-container .food-card {
+    margin-left: 3px;
+    margin-bottom: 5px;
+}
+
+
+.food-card-meal-type {
+    font-size: 22px;
+    padding-left: 3px;
+    text-decoration: none;
+    color: #000000;
+
+}
+
+.food-card .name {
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 1px;
+
+}
+
+.food-card .macros {
+    font-size: 12px;
+    padding-left: 1px;
+}
+
+.food-card-image {
+    display: flex;
+    align-items: center;
+    background-color: #DADADA;
+    gap: 3px;
+    margin-bottom: 3px;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.food-page-container {
+    display: flex;
+    align-items: center;
+    background-color: #DADADA;
+    gap: 3px;
+    margin-bottom: 3px;
+    justify-content: space-between;
+}
+
+.food-card-image p {
+    padding-left: 3px;
+}
+
+.food-card-image .img {
+    max-width: 30px;
+    height: auto;
+}
+
+
+.meal-display-none {
+    display: none;
+}
+
+.meal-link {
+    text-decoration: none;
+    color: #000000;
+}
+
+.meal {
+    cursor: pointer;
+}
+
+.saved-foods {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.saved-foods .add-new-food:hover {
+    background-color: #218838 !important;
+}
+
+.saved-foods .saved-foods-food-name {
+    font-size: 16px;
+}
+
+.saved-foods .saved-foods-calories {
+    font-size: 12px;
+}
+
+.saved-foods .saved-foods-serving,
+.saved-foods .saved-foods-fats,
+.saved-foods .saved-foods-protein,
+.saved-foods .saved-foods-carbs {
+    font-size: 11px;
+    color: #c0c0c0;
+}
+
+
+
+
+.food-page>div:first-of-type {
+    display: flex;
+    flex-direction: column;
+}
+
+.food-page .food-page-table-of-macros {
+    display: flex;
+    align-items: end;
+}
+
+.food-page .food-page-table-of-macros .table {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.food-page .food-page-table-of-macros .macro-data {
+    font-size: 11px;
+    height: 30px;
+    border: 1px solid;
+    padding-right: 3px;
+    padding-left: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.food-page .food-page-table-of-macros .macro-data.goal {
+    background-color: #caf0f8;
+    font-weight: bold;
+}
+
+.food-page .food-page-table-of-macros .macro {
+    background-color: #0077b6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 3px;
+    padding-left: 3px;
+    font-size: 12px;
+    height: 30px;
+    border: 1px solid #000000;
+}
+
+.search-food-container {
+    background-color: #f6f6f6;
+}
+
+.search-food {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 340px;
+    background-color: #c8d9ed;
+    width: 300px;
+    margin: auto;
+    padding-top: 25px;
+    border-radius: 20px;
+}
+
+.search-food>div>h5 {
+    font-size: 20px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.search-food>div>img {
+    width: 25px;
+}
+
+.search-food .meal-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+
+.search-food .search-food-inputs {
+    border-radius: 6px;
+    border: none;
+    width: 260px;
+    height: 25px;
+
+}
+
+.search-food .search-food-labels {
+    color: #000000;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.search-food .search-food-inputs:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.search-food .search-food-label-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-food .btn-search-food {
+    color: #ffffff;
+    background: #0077b6;
+    width: 260px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    border: none;
+}
+
+.search-food .btn-search-food:hover {
+    background-color: #339edc;
+}
+
+
+.search-food-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (min-width: 360px) and (max-width: 1100px) {
+    .food-page {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .food-page>div:first-of-type {
+        flex-direction: column;
+    }
+
+    .text-header-calories-mobile {
+        font-size: 12px;
+    }
+
+    .daily-macros .daily-macros-foods {
+        width: unset;
+    }
+
+    .food-page .food-page-total-macros {
+        margin-bottom: 15px;
+    }
+
+    .food-page .food-page-total-macros {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .food-page .food-page-table-of-macros {
+        margin-bottom: 20px;
+    }
+
+    .saved-foods .foods {
+        text-align: center;
+    }
+
+    .home-page-macro {
+        width: 380px;
+    }
+
+}

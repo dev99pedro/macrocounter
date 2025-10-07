@@ -1,0 +1,21 @@
+
+<% current_user.foods.select { | f | f.meal_type == meal_type }.each do | food | %>
+    <div id="<%= dom_id(food) %>">
+        <div class="food-card-container">
+            <div class="food-card">
+                <p class="name"> <%= food.foodname %> </p>
+                <p class="macros"> Calories: <%= food.calories %> </p>
+                <p class="macros"> Fat: <%= food.fats %> </p>
+                <p class="macros"> Carbohydrate: <%= food.carbs %> </p>
+                <p class="macros"> Protein: <%= food.proteins %> </p>
+            </div>
+            <div>
+                <%= button_to "Delete", food_path(food), method: :delete, style: "background: none; border: none; font-size: 12px; cursor: pointer" %>
+            </div>
+        </div>
+    </div>
+<% end %>
+<%= turbo_stream_from "removefood" %>
+
+
+

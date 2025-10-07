@@ -1,23 +1,110 @@
-<h1> Cardapiooo</h1>
-
-<br>
-
-<h2> Café da manhã</h2>
-<h3> Adicionar Alimento </h3>
-<%= link_to "Nova comida (Café da manha)", new_food_path(meal_type: 'café')  %>
-<%# quando clicar aq tem que abrir só o do cafe %>
-<br><br>
 
 
-<h2> Almoço</h2>
-<h3> Adicionar Alimento </h3>
-<%= link_to "Nova comida (Almoço)", new_food_path(meal_type: 'almoço')  %>
-<%# quando clicar aq tem que abrir só o do almoço %>
+<div class="daily-macros">
+    
+    <div class="daily-macros-calories-remaining">
+        <p class="text-header-calories-mobile"> Calories Remaining: </p>
+        <p class="text-header-calories-mobile"><strong><%= current_user.daily_macros.last.calories %>  - <%= current_user.sum_macros[:calories]%>: </strong><%= current_user.calculate[:totalcalories] %><span style="font-size: 12px">kcal</span></p>
+    </div>
+    <div class="daily-macros-foods">
+        <p class="text-header-calories-mobile"> Foods </p>
+    </div>
+     <div class="daily-macros-saved-foods">
+        <p class="text-header-calories-mobile"> Saved Foods </p>
+    </div>
+</div>
 
-<br><br>
+<div class="food-page" data-controller="log-button">
+    <div>
+        <div class="food-page-total-macros">
+            <h4 style="text-decoration: underline">Total macros off the day</h4>  
+            <p>Calories: <%= current_user.sum_macros[:calories] %></p>
+            <p>Protein: <%= current_user.sum_macros[:proteins] %></p>
+            <p>Carbs: <%= current_user.sum_macros[:fats] %></p>
+            <p>Fats: <%= current_user.sum_macros[:carbs] %></p>
+            <%= link_to "Change Macros", daily_macros_path, class: "btn-change-macros" %>
+        </div>
+        <div class="food-page-table-of-macros">
+            <div clas="table" style="width: 100px">
+                <span class="macro"> Nutrition Totals </span>
+                <p class="macro-data goal">Goal:</p>
+                <p class="macro-data goal">Consumed:</p>
+                <p class="macro-data goal">Remaining:</p>
+            </div>
+            <div class="table"> 
+                <span class="macro"> Calories </span>
+                <p class="macro-data"> <%= current_user.daily_macros.last.calories%> </p>
+                <p class="macro-data"><%= current_user.sum_macros[:calories]%></p>
+                <p class="macro-data"> <%= current_user.calculate[:totalcalories] %> </p>
+            </div>
+            <div class="table"> 
+                <span class="macro"> Fats </span>
+                <p class="macro-data"><%= current_user.daily_macros.last.fats %></p>
+                <p class="macro-data"><%= current_user.sum_macros[:fats] %> </p>
+                <p class="macro-data"><%= current_user.calculate[:totalfats] %>   </p>
+            </div>
+            <div class="table"> 
+                <span class="macro"> Carbs </span>
+                <p class="macro-data"><%= current_user.daily_macros.last.carbs %></p>
+                <p class="macro-data"><%= current_user.sum_macros[:carbs] %> </p>
+                <p class="macro-data"><%= current_user.calculate[:totalcarbs] %></p>
+            </div>
+            <div class="table"> 
+                <span class="macro"> Proteins </span>
+                <p class="macro-data"><%= current_user.daily_macros.last.protein %></p>
+                <p class="macro-data"><%= current_user.sum_macros[:proteins] %></p>
+                <p class="macro-data"><%= current_user.calculate[:totalprotein] %></p>
+            </div>
+        </div>
+    </div>
 
-<h2> Janta</h2>
-<h3> Adicionar Alimento </h3>
-<%= link_to "Nova comida (Janta)", new_food_path(meal_type: 'janta')  %>
-<%# quando clicar aq tem que abrir só o do almoço %>
+    <div class="food-page-food-selection" >    
+        <% ["breakfeast", "lunch", "dinner"].each do |meal| %>
+        <div class="food-page-container">
+            <div style="width: 100%">
+                <div class="food-card-image meal">
+                    <div style="display: flex; align-items: center;gap: 5px">
+                        <p> <%= meal %> </p>
+                        <%= image_tag("/images/#{meal}.png", alt: "Logo", class: "img") %>
+                    </div>
+                    <div style="padding-right: 3px">    
+                     <%= render "shared/calories_update", meal: meal, user: @user %>                        
+                    </div>
+                </div>
+                <div class="meal-content meal-display-none">
+                    <%= render "shared/food_card", meal_type: meal %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+        <div style="display: flex">   
+            <div class="container-btn-new-food">
+                <%= link_to "Quick Add", new_food_path, class: "btn-new-food" %>
+            </div>
+        </div>
+    </div>  
+    
 
+    <div class="saved-foods">
+        <div>
+        <% current_user.foods.each do | food | %>
+        <div class="foods">
+            <div id="<%= dom_id(food)%>">
+                <p class="saved-foods-food-name"><strong><%= food.foodname %></strong> </p>
+                <p class="saved-foods-calories"><strong>Calories: <%= food.calories %> </strong> </p>
+                <p class="saved-foods-fats">Fats: <%= food.fats %> </p>
+                <p class="saved-foods-carbs">Carbs: <%= food.carbs %> </p>
+                <p class="saved-foods-protein">Protein: <%= food.proteins %> </p>
+                <p class="saved-foods-serving">Serving: <%= food.serving_size %>g </p>
+            </div>
+        </div>
+        <% end %>
+        </div>
+         <div class="add-new-food">
+            <%= link_to "Add New Food", new_food_path, class: "add-new-food" ,style: "color: #ffffff;background: #04a12b;width: 90px;height: 25px;display: flex;align-items: center;justify-content: center;cursor: pointer;text-decoration: none; font-size: 10px; border-radius: 2px" %>
+        </div>
+    </div>
+</div>
+
+<%= turbo_stream_from "updatecalories" %>
+<%= turbo_stream_from "removefood" %>

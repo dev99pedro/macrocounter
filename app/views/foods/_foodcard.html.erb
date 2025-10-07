@@ -1,12 +1,31 @@
-
+<div class="search-food-container">
 <%= form_with url: foods_path, method: :post,  local: true do |form | %>
-    <%= form.hidden_field :meal_type, value: meal_type %>
-    <%= form.label "Nome da comida" %>
-    <%= form.text_field :query %>
-    <%= form.number_field :unit%>
-    <%= form.submit "Salvar"%>
-<% end %>
+<div class="search-food">
+    <div class="meal-type">
+        <h5>Add food </h5>
+    </div>
+    <div class="search-food-label-input">
+    <%= form.label "Food name", class:"search-food-labels" %>
+    <%= form.text_field :query, class:"search-food-inputs" %>
+    </div>
+    <div class="search-food-label-input">
+    <%= form.label "Quantity in G", class:"search-food-labels" %>
+    <%= form.number_field :unit, class:"search-food-inputs"%>
+    </div>
+    <%= form.select :meal_type, ["breakfeast", "lunch", "dinner"], { prompt: "Selecione..." }, { style: "width: 260px; 
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: #000000; 
+    cursor: pointer;
+    margin-bottom: 10px;" } %>
+    <%= form.submit "Add Food", class: "btn-search-food"%>
+</div>
 
+    
+
+<% end %>
+</div>
 
 <%# url: ali vai o metodo HTTP que tu quer usar. No caso para ATIVAR O metodo post, precisamos colocar teste_path. %>
 
