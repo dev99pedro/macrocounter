@@ -6,20 +6,19 @@ class DailyMacrosController < ApplicationController
 
   def index
     @daily_macros = DailyMacro.all
-    render json: @daily_macros
-    # transforma os dados que vao vindo em json
+    respond_to do | format |
+      format.html
+      format.json {render json: @daily_macros}
+    end
   end
 
   def create
-    @daily_macro = DailyMacro.new
     @daily_macro = current_user.daily_macros.new(daily_macros_params)
-
     if @daily_macro.save
-      redirect_to daily_macros_path, notice: "criado"
+      redirect_to foods_path, notice: "criado"      
     else
-      render :new
-      # se der errado renderiza a view dailymacros/new 
-    end
+      render :index
+    end 
   end
 
   def show

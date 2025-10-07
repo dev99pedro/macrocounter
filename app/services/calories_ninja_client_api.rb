@@ -19,6 +19,7 @@ class CaloriesNinjaClientApi
     #query e unit sao dois parametros que estao sendo pegados por :unit e :query no controlador
 
     encoded_query = ERB::Util.url_encode(unit)
+
     # transforma o unit(que é a quantidade do alimento) em uma string sem espaços, quebras etc
 
     uri = URI("#{API_URL}?query=#{encoded_query}g #{query}")

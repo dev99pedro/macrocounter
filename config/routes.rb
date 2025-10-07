@@ -8,7 +8,15 @@ Rails.application.routes.draw do
   # quando o usuario acessar a url/foods/search, é para dentro do controlador Foodscontroller chamar o metodo search
 
 
-  root "home#index"
+
+
+
+
+
+  
+  get "/daily_macro", to: "daily_macro#index"
+
+  root "daily_macros#index"
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check

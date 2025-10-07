@@ -1,0 +1,10 @@
+<div class="header-user">
+    <div style="display: flex; align-items: center; gap: 20px">
+        <% if user_signed_in? %>
+            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn-logout" %>
+            <p class="email-user"> <%= current_user.email %></p>
+        <% end %>
+    </div>
+    <div>
+    </div>
+</div>
